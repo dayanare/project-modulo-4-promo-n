@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/jpg" href="/pruebas-feas-base.svg" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="static/css/main.5ba05825.chunk.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Happi Painters</title>
+  </head>
+  <body class="page">
+    <section
+      className="preview"
+      style="
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: #a2deaf;
+      "
+    >
+      <div className="preview__container">
+        <section class="preview__card palcol<%=palette %> pal<%=palette %>">
+          <div class="preview__card-data">
+            <h2 class="preview__card-data--name js-name"><%= name %></h2>
+            <h3 class="preview__card-data--jobTitle js-jobTitle"><%= job %></h3>
+          </div>
+          <img src = "<%= photo %>" class="preview__card-image js__profile-image">
+          <div class="preview__card-socials">
+            <a
+              class="preview__card-socials--items js-buttonTel"
+              href="tel:<%=phone %>"
+              target="_blank"
+              title="telephone"
+              ><span class="fas fa-mobile-alt"></span></a
+            ><a
+              class="preview__card-socials--items js-buttonEm"
+              href="mailto:<%=email %>"
+              target="_blank"
+              title="email"
+              ><span class="far fa-envelope"></span></a
+            ><a
+              class="preview__card-socials--items js-buttonLink"
+              href="https://www.linkedin.com/in/<%=linkedin %>"
+              target="_blank"
+              title="linkedin"
+              ><span class="fab fa-linkedin-in"></span></a
+            ><a
+              class="preview__card-socials--items js-buttonGit"
+              href="https://github.com/<%=github %>"
+              target="_blank"
+              title="github"
+              ><span class="fab fa-github-alt"></span
+            ></a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </body>
+</html>
