@@ -65,6 +65,7 @@ server.post('/card', (req, res) => {
     } else {
       response.cardURL = `https://awesome-card-adalab.herokuapp.com/card/${result.lastInsertRowid}`;
     }
+    response.cardURL = `http://localhost:4001/card/${result.lastInsertRowid}`;
   }
   //
   res.json(response);
