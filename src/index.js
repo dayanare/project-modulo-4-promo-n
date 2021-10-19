@@ -63,7 +63,7 @@ server.post('/card', (req, res) => {
     response.success = true;
     //response.cardURL = `http://localhost:${serverPort}/card/${result.lastInsertRowid}`;
 
-    response.cardURL = `https://awesome-card-adalab.herokuapp.com/card/${result.lastInsertRowid}`;
+    response.cardURL = `https://awesome-profile-adalab.herokuapp.com/card/${result.lastInsertRowid}`;
   }
   //
   res.json(response);
