@@ -31,8 +31,8 @@ server.get('/card/:id', (req, res) => {
 const serverStaticPath = './public';
 server.use(express.static(serverStaticPath));
 
-// Arrancamos el servidor en el puerto 3000
-const serverPort = 4001;
+// Arrancamos el servidor en el puerto 4000
+const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
@@ -60,7 +60,11 @@ server.post('/card', (req, res) => {
     );
 
     response.success = true;
-    response.cardURL = `http://localhost:4001/card/${result.lastInsertRowid}`;
+    if (req.hostname === 'localhost') {
+      response.cardURL = `http://localhost:${serverPort}/card/${result.lastInsertRowid}`;
+    } else {
+      response.cardURL = `https://awesome-card-adalab.herokuapp.com/card/${result.lastInsertRowid}`;
+    }
   }
   //
   res.json(response);
